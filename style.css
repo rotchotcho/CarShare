@@ -1,0 +1,17 @@
+h1 {
+	color : blue;
+	text-align : center;
+	}
+	
+div.entete {
+	text-align : center;
+}
+
+a {
+	margin-left : 10px;
+}
+
+img {
+    width: 100%;
+    height: 300px;
+}
