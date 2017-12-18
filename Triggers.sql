@@ -15,6 +15,7 @@ création d'un nouveau trajet type lors de la proposition d'un covoiturage si ce
 /*
 
 s'assurer que l'on ne dépasse pas le nbplace de la voiture
+a mettre dans un trigger
 
 */
 
