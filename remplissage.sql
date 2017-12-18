@@ -1,5 +1,41 @@
-INSERT INTO VEHICULE VALUES(123,'RENAUT','CLIO',5);
+/*
+Ficier remplissage.sql
+21507569, Bourdeau, Clement
 
-INSERT INTO MEMBRE VALUES('1','UTILISATEUR','UTI1@BLABLA.COM','MDP','ROBERT','LECON',123,'ADR',12334,NULL);
-INSERT INTO MEMBRE VALUES('2','UTILISATEUR','UTI2@BLABLA.COM','MDP','GERARD','LECON',123,'ADR',12334,123);
-INSERT INTO MEMBRE VALUES('3','UTILISATEUR','UTI3@BLABLA.COM','MDP','BERTRAND','LESAGE',123,'ADR',12334,123);
+*/
+
+ALTER session SET NLS_DATE_FORMAT='DD/MM/YYYY' ;
+
+prompt -------------------------------------------;
+prompt --- Suppression des anciens tuples --------;
+prompt -------------------------------------------;
+
+DELETE FROM VEHICULE;
+DELETE FROM MEMBRE;
+/*
+Insertion des tuples dans les relations
+*/
+
+prompt -------------------------------------------;
+prompt --- Insertion des nouveaux tuples ---------;
+prompt -------------------------------------------;
+
+prompt ------------------------------------------;
+prompt -----     insertion membre    ------------;
+prompt ------------------------------------------;
+
+INSERT INTO MEMBRE VALUES(1,'UTILISATEUR','f.pignon@gmail.com','MdpFP','PIGNON','FRANCOIS','01/01/1990','ADR_FP',0612344569,NULL);
+INSERT INTO MEMBRE VALUES(2,'UTILISATEUR','g.blanc@gmail.com','MdpGB','BLANC','GERARD','17/05/1986','ADR_GB',0678694217,'AB-123-CD');
+
+prompt ------------------------------------------;
+prompt -----    insertion vehicule   ------------;
+prompt ------------------------------------------;
+
+INSERT INTO VEHICULE VALUES('AB-123-CD','RENAULT','CLIO',5);
+INSERT INTO VEHICULE VALUES('ER-456-EU','PEUGEOT','206',2);
+
+prompt ------------------------------------------;
+prompt -----    insertion trajer     ------------;
+prompt ------------------------------------------;
+
+--INSERT INTO TRAJET VALUES(1,'MARSEILLE','LYON','18/12/2017',15,4,19,10,'AB-123-CD',
