@@ -1,6 +1,8 @@
 /*
-Ficier remplissage.sql
+
+Fichier remplissage.sql
 21507569, Bourdeau, Clement
+20130265, Vielmas, Florent
 
 */
 
