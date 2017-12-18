@@ -35,7 +35,13 @@ INSERT INTO VEHICULE VALUES('AB-123-CD','RENAULT','CLIO',5);
 INSERT INTO VEHICULE VALUES('ER-456-EU','PEUGEOT','206',2);
 
 prompt ------------------------------------------;
-prompt -----    insertion trajer     ------------;
+prompt -----  insertion trajet type  ------------;
 prompt ------------------------------------------;
 
---INSERT INTO TRAJET VALUES(1,'MARSEILLE','LYON','18/12/2017',15,4,19,10,'AB-123-CD',
+INSERT INTO TRAJET_TYPE VALUES('MARSEILLE','LYON',4,10);
+
+prompt ------------------------------------------;
+prompt -----  insertion covoiturage  ------------;
+prompt ------------------------------------------;
+
+INSERT INTO COVOITURAGE VALUES(1,'MARSEILLE','LYON',1,'18/12/2017',15,19,'RDV','DEPOSE',5,5);
