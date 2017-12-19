@@ -10,8 +10,11 @@ prompt -------------------------------------------;
 prompt --- Suppression des anciens tuples --------;
 prompt -------------------------------------------;
 
-DELETE FROM VEHICULE;
-DELETE FROM MEMBRE;
+DELETE FROM COVOITURAGE CASCADE;
+DELETE FROM VEHICULE CASCADE;
+DELETE FROM MEMBRE CASCADE ;
+DELETE FROM TRAJET_TYPE CASCADE ;
+
 /*
 Insertion des tuples dans les relations
 */
@@ -35,13 +38,28 @@ INSERT INTO VEHICULE VALUES('AB-123-CD','RENAULT','CLIO',5);
 INSERT INTO VEHICULE VALUES('ER-456-EU','PEUGEOT','206',2);
 
 prompt ------------------------------------------;
+prompt -----  insertion covoiturage  ------------;
+prompt ------------------------------------------;
+
+INSERT INTO COVOITURAGE VALUES(1,'MARSEILLE','LYON',10,4,1,'18/12/2017',15,19,'RDV','DEPOSE',5,5);
+INSERT INTO COVOITURAGE VALUES(2,'PARIS','BORDEAUX',15,8,1,'19/12/2017',10,18,'RDV','DEPOSE',5,5);
+
+prompt ------------------------------------------;
 prompt -----  insertion trajet type  ------------;
 prompt ------------------------------------------;
 
 INSERT INTO TRAJET_TYPE VALUES('MARSEILLE','LYON',4,10);
+/*
+INSERT INTO TRAJET_TYPE(VILLE_DEPART,VILLE_ARRIVEE,TPS_MOYEN,PRIX)
+SELECT V_DEPART,V_ARRIVEE,DUREE,COVOITURAGE.PRIX
+FROM COVOITURAGE,TRAJET_TYPE
+WHERE VILLE_DEPART NOT IN (SELECT V_DEPART FROM TRAJET_TYPE)
+AND VILLE_ARRIVEE NOT IN (SELECT V_ARRIVEE FROM TRAJET_TYPE);
+*/
 
 prompt ------------------------------------------;
-prompt -----  insertion covoiturage  ------------;
+prompt -----  insertion inscription  ------------;
 prompt ------------------------------------------;
 
-INSERT INTO COVOITURAGE VALUES(1,'MARSEILLE','LYON',1,'18/12/2017',15,19,'RDV','DEPOSE',5,5);
+
+INSERT INTO INSCRIPTION VALUES (1,1);
