@@ -6,7 +6,7 @@ Fichier tables.sql
 */
 
 DROP TRIGGER new_trajet_type;
---DROP TRIGGER nouveau_passager;
+
 
 /*
 	
@@ -15,14 +15,15 @@ création d'un nouveau trajet type lors de la proposition d'un covoiturage si ce
 Ne marche pas car on ne peut pas utiliser la table covoiturage dans un trigger invoqué par cette même table
 
 */
-CREATE TRIGGER new_trajet_type
+DELIMITER /
+
+CREATE TRIGGER OR REPLACE new_trajet_type
 AFTER INSERT ON COVOITURAGE FOR EACH ROW
 BEGIN
 	INSERT INTO TRAJET_TYPE(VILLE_DEPART,VILLE_ARRIVEE,TPS_MOYEN,PRIX)
 	SELECT(:NEW.V_DEPART,:NEW.V_ARRIVEE,:NEW.DUREE,:NEW.PRIX)
 	FROM COVOITURAGE;
-END ;
-/
+END /
 
 
 
