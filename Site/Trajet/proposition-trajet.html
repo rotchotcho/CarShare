@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
       [class*="col"] { margin-bottom: 20px; }
       img { width: 100%; }
@@ -11,12 +11,25 @@
     <title>Car Share, le site de covoiturage</title>
   </head>
   <body>
-    <form method="get" action="proposition-trajet.php">
-      <input name="depart" type="text" value="Départ" required>
-      <input name="arrivee" type="text" value="Arrivée"  required>
-      <input type="date" value="date de départ"> 
-      <input type="submit" value="Go !">
-    </form>
-    <p>retour acceuil : <a href="../accueil.html"> clique ici</a> pour revenir à la page d'accueil.</p>    
+    <div class="container">
+    <header class="row">
+        <div class="col-12">
+          <h1>Bienvenue sur Car share, le site numéro un du covoiturage</h1>
+	</div>
+      </header>
+      <div class="col-lg-4 col-lg-offset-2">
+	<div>
+	  <form class="form-control" method="get" action="proposition-trajet.php">
+	    <input name="depart" type="text" value="Départ" required>
+	    <input name="arrivee" type="text" value="Arrivée"  required>
+	    <input type="date" value="date de départ">
+	    <input type="text" value="heure de départ" pattern="[0-5]">
+	    <input type="number" min="0" max="30" step="1" value="10">
+	    <input type="submit" value="Go !">
+	  </form>
+	  <p>retour acceuil : <a href="../accueil.html"> clique ici</a> pour revenir à la page d'accueil.</p>
+	</div>
+      </div>
+    </div>
   </body>
 </html>
