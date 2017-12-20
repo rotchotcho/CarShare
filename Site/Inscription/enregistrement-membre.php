@@ -14,19 +14,23 @@ echo '<br/>-- ' .$email.' '.$mdp;
 echo '<br/>-- '.$pseudo.' '.$date_nai;
 echo '<br/>-- ' .$adr.' '.$tel; 
 
-       $dsn = "mysql:host=prodpeda-venus; dbname=fvielmas";
-       $user = "fvielmas";
-       $pass = "garrinch";
-       
-       $pdo = new PDO($dsn, $user, $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+// -------------- Connexion a la BD
+try {
+$dsn = "mysql:host=prodpeda-venus; dbname=fvielmas";
+$user = "fvielmas";
+$pass = "garrinch";
+$pdo = new PDO($dsn, $user, $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 echo '<br/><br/>--> Connexion à la base de donnée OK'; 
+}
+catch (Exception $e) {
+    die("<br/>Impossible de se connecter: <br/>>" . $e->getMessage());
+}
 
 
-
-
-////inscription du nouveau membre  dans la base donnée
-
-$insert = $pdo->prepare("INSERT INTO MEMBRE (id,ptype,email,mdp,nom,prenom,date_naissance,adresse,tel) VALUES (41,'UTILISATEUR',:email,:mdp,:nom,:prenom,:date_naissance,:adresse,:tel)");
+// -------------------- Inscription d'un nouveau membre
+try {
+$insert = $pdo->prepare("INSERT INTO MEMBRE (id,ptype,email,mdp,nom,prenom,date_naissance,adresse,tel) VALUES (42,'UTILISATEUR',:email,:mdp,:nom,:prenom,:date_naissance,:adresse,:tel)");
 
 
 $insert->bindParam(':email', $email);
@@ -37,9 +41,14 @@ $insert->bindParam(':prenom', $prenom);
 $insert->bindParam(':adresse', $adr);
 $insert->bindParam(':tel', $tel);
 $insert->execute();
-
 echo '<br/>--> Insertion du nouveau membre dans la base de donnée ok';
+}
+catch (Exception $e) {
+    echo "<br/>Impossible d'inscrire le nouveau membre: <br/>>" . $e->getMessage();
+}
 
+// ------------------------ Affichage des membres
+try {
 $sql = 'SELECT id, nom, prenom, date_naissance, adresse, tel, email, mdp FROM MEMBRE'; 
     $query = $pdo->query($sql);
     $tuples = $query->fetchAll(PDO::FETCH_OBJ);
@@ -51,7 +60,11 @@ $sql = 'SELECT id, nom, prenom, date_naissance, adresse, tel, email, mdp FROM ME
       }
     echo"</ul>";
 echo '<br/>--> affichage des membres actualisés';
-    ?>
+}
+catch (Exception $e) {
+    echo "<br/>Impossible d'inscrire le nouveau membre: <br/>>" . $e->getMessage();
+}
+?>
 
 
-<p>retour sur l'inscription : <a href="inscription.php"> clique ici</a> pour revenir à la page inscription.</p>    
+<p>retour sur l'inscription : <a href="inscription.html"> clique ici</a> pour revenir à la page inscription.</p>    
