@@ -2,7 +2,7 @@
 rlwrap sqlplus cbourdeau/azertyui@venus/licence
 Fichier tables.sql
 21507569, Bourdeau, Clement
-
+20130265, Vielmas, Florent
 */
 
 DROP TABLE AVIS;
