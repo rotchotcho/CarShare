@@ -42,14 +42,13 @@
 	</div>
 	<div class="col-lg-6 col-lg-push-6">
 	  Une envie d'ailleurs ?<br/>
-	<form method="get" action="consultation-trajet.php">
+	<form>
 	  <input name="depart" type="text" value="Départ" required>
 	  <input name="arrivee" type="text" value="Arrivée"  required>
-	  <input type="date" value="date de départ"> 
 	  <input type="submit" value="Go !">
 	</form>
 	En voiture Simone !<br/>
-	  <form action="Trajet/proposition-trajet.html">
+	  <form method="get" action="proposition-trajet.php">
 	    <input type="submit" value="Proposez votre tajet">
 	  </form>
 	</div>
