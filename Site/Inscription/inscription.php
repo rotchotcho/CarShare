@@ -9,7 +9,7 @@
   <body>
     <h1>Bienvenue sur Car share, le site numéro du covoiturage</h1>
      <p>Aujourd'hui nous sommes le <?php echo date('d/m/Y h:i:s'); ?>.</p>
-	<a href="http://localhost/~cbourdeau/CarShare/Site/accueil.html">Accueil</a>
+	<a href="http://localhost/~fvielmas/CarShare/Site/accueil.html">Accueil</a>
 	<p>Inscription :</p>
 	<form method="post" action="enregistrement-membre.php">
 	  Nom* : <input name="nom" type="text" required><br/>
