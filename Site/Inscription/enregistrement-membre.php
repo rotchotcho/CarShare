@@ -1,22 +1,22 @@
 <?php	
 
 
-$nom = $_GET['nom'];
-$prenom = $_GET['prenom'];
-$email = $_GET['email'];
-$mdp = $_GET['password'];
-$pseudo = $_GET['pseudo'];
-$date_nai = $_GET['date_naissance'];
-$adr = $_GET['adr'];
-$tel = $_GET['tel'];
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$email = $_POST['email'];
+$mdp = $_POST['password'];
+$pseudo = $_POST['pseudo'];
+$date_nai = $_POST['date_naissance'];
+$adr = $_POST['adr'];
+$tel = $_POST['tel'];
 echo 'Enregistrement dans la base de: <br/>--'.$prenom.' '.$nom;
 echo '<br/>-- ' .$email.' '.$mdp;
 echo '<br/>-- '.$pseudo.' '.$date_nai;
 echo '<br/>-- ' .$adr.' '.$tel; 
 
-       $dsn = "mysql:host=prodpeda-venus; dbname=fvielmas";
-       $user = "fvielmas";
-       $pass = "garrinch";
+       $dsn = "mysql:host=prodpeda-venus; dbname=cbourdeau";
+       $user = "cbourdeau";
+       $pass = "azertyui";
        
        $pdo = new PDO($dsn, $user, $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 echo '<br/><br/>--> Connexion à la base de donnée OK'; 
@@ -26,7 +26,7 @@ echo '<br/><br/>--> Connexion à la base de donnée OK';
 
 ////inscription du nouveau membre  dans la base donnée
 
-$insert = $pdo->prepare("INSERT INTO MEMBRE (id,ptype,email,mdp,nom,prenom,date_naissance,adresse,tel) VALUES (41,'UTILISATEUR',:email,:mdp,:nom,:prenom,:date_naissance,:adresse,:tel)");
+$insert = $pdo->prepare("INSERT INTO MEMBRE (ptype,email,mdp,nom,prenom,date_naissance,adresse,tel) VALUES ('UTILISATEUR',:email,:mdp,:nom,:prenom,:date_naissance,:adresse,:tel)");
 
 
 $insert->bindParam(':email', $email);
