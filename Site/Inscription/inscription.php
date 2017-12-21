@@ -3,15 +3,15 @@
   <head>
    
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="style.css">
+     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <title>Car Share, le site de covoiturage</title>
   </head>
   <body>
     <h1>Bienvenue sur Car share, le site numéro du covoiturage</h1>
      <p>Aujourd'hui nous sommes le <?php echo date('d/m/Y h:i:s'); ?>.</p>
-	<a href="accueil.html">Accueil</a>
+	<a href="http://localhost/~cbourdeau/CarShare/Site/accueil.html">Accueil</a>
 	<p>Inscription :</p>
-	<form method="get" action="enregistrement-membre.php">
+	<form method="post" action="enregistrement-membre.php">
 	  Nom* : <input name="nom" type="text" required><br/>
 	  Prénom* : <input name="prenom" type="text" required><br/>
 	  Email* : <input name="email" type="email" required><br/>
