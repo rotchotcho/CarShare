@@ -1,5 +1,6 @@
 /*
-Fichier remplissage.sql
+Fichiers: remplissage.sql
+mysql -h venus -u fvielmas fvielmas -p
 21507569, Bourdeau, Clement
 20130265, Vielmas, Florent
 */
