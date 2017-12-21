@@ -1,15 +1,17 @@
 <!DOCTYPE html>	
 <html>
   <head>
+   
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="style.css">
     <title>Car Share, le site de covoiturage</title>
   </head>
   <body>
-	<h1>Bienvenue sur Car share, le site numéro du covoiturage</h1>
+    <h1>Bienvenue sur Car share, le site numéro du covoiturage</h1>
+     <p>Aujourd'hui nous sommes le <?php echo date('d/m/Y h:i:s'); ?>.</p>
 	<a href="accueil.html">Accueil</a>
 	<p>Inscription :</p>
-	<form>
+	<form method="get" action="traitementformulaire.php">
 	  Nom* : <input name="nom" type="text" required><br/>
 	  Prénom* : <input name="prenom" type="text" required><br/>
 	  Email* : <input name="email" type="email" required><br/>
@@ -22,4 +24,5 @@
 	</form>
 	<p>* Champs obligatoires</p>
   </body>
+ 
 </html>
