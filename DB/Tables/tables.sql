@@ -1,5 +1,5 @@
 /*
-rlwrap sqlplus cbourdeau/azertyui@venus/licence
+mysql -h venus -u fvielmas fvielmas -p
 Fichier tables.sql
 21507569, Bourdeau, Clement
 20130265, Vielmas, Florent
