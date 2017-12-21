@@ -1,6 +1,6 @@
 /*
 mysql -h venus -u fvielmas fvielmas -p
-Fichier tables.sql
+Fichier : update_nbplaces.sql
 21507569, Bourdeau, Clement
 20130265, Vielmas, Florent
 */
