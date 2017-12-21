@@ -37,4 +37,4 @@ catch (Exception $e) {
     echo "<br/>Impossible d'afficher les covoiturages <br/>>" . $e->getMessage();
 }
 ?>
-<p>retour acceuil : <a href="../accueil.html"> clique ici</a> pour revenir à la page d'accueil.</p>    
+<p>retour acceuil : <a href="accueil.html"> clique ici</a> pour revenir à la page d'accueil.</p>    

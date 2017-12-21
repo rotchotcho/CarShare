@@ -26,15 +26,20 @@ catch (Exception $e) {
 
 // -------------------- Affichage des covoiturages
 try {
-    $stmt = $pdo->prepare("SELECT numcovoit, v_depart, v_arrivee, nom, prenom FROM COVOITURAGE,MEMBRE where v_depart = ? AND v_arrivee = ? AND conducteur=id");
-    if ($stmt->execute(array($_GET['depart'],$_GET['arrivee']))){ // liaison implicite
-        while ($row = $stmt->fetch()) {
-            print("<br/>".$row['numcovoit']." : ".$row['v_depart']." : ".$row['v_arrivee']." :".$row['nom']);
-        }
+    //$sql = 'SELECT numcovoit, v_depart, v_arrivee, nom, prenom FROM COVOITURAGE MEMBRE where covoiturage.conducteur = membre.id AND v_depart = ".$ville_depart" AND v_arrivee = ".$ville_arrivee"';
+    $sql = 'SELECT numcovoit, v_depart, v_arrivee FROM COVOITURAGE';
+    $query = $pdo->query($sql);
+    $tuples = $query->fetchAll(PDO::FETCH_OBJ);
+    echo "<ul>";
+    foreach($tuples as $tuple) {
+        echo "<li>",$tuple->numcovoit,' ',$tuple->v_depart,' ',$tuple->v_arrivee,"</li>";
     }
+    echo"</ul>";
+    echo '<br/>--> affichage des covoiturages';
 }
 catch (Exception $e) {
     echo "<br/>Impossible d'afficher les covoiturages <br/>>" . $e->getMessage();
 }
+
 ?>
 <p>retour acceuil : <a href="../accueil.html"> clique ici</a> pour revenir à la page d'accueil.</p>    
