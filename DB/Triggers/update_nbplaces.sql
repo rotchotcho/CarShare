@@ -1,14 +1,13 @@
 /*
-Trigger 2 : décrementer le nombre de places disponibles à l'issu des inscriptions sur un covoiturage
+rlwrap sqlplus cbourdeau/azertyui@venus/licence
+Fichier tables.sql
+21507569, Bourdeau, Clement
 */
 
 DROP TRIGGER `update_nbplaces`;
-CREATE TRIGGER `update_nbplaces`
-AFTER INSERT ON `INSCRIPTION`
-
-DECLARE nb_places NUMERIC(1);
-	SELECT NB_PLACES_DISPO INTO nb_places FROM COVOITURAGE,INSCRIPTION
-	WHERE TRAJET = NUMCOVOIT;
-	UPDATE COVOITURAGE
-	SET NB_PLACES_DISPO = nb_places-1; 
+CREATE TRIGGER `update_nbplaces` AFTER INSERT ON `INSCRIPTION`
+FOR EACH ROW
+UPDATE COVOITURAGE
+SET NB_PLACES_DISPO = NB_PLACES_DISPO - 1 
+WHERE COVOITURAGE.NUMCOVOIT = TRAJET
 

@@ -1,3 +1,9 @@
+/*
+rlwrap sqlplus cbourdeau/azertyui@venus/licence
+Fichier tables.sql
+21507569, Bourdeau, Clement
+*/
+
 DROP TRIGGER `covoit_trajet_type`;
 CREATE TRIGGER `covoit_trajet_type` 
 BEFORE INSERT ON `COVOITURAGE` FOR EACH ROW
