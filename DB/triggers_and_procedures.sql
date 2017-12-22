@@ -28,11 +28,17 @@ DELIMITER ;
 
 /*
 Trigger qui décrémente le nombre de places d'un covoiturage a chaque inscription à celui ci
-*/CREATE TRIGGER `update_nbplaces` AFTER INSERT ON `INSCRIPTION`
+*/
+
+DELIMITER |
+CREATE TRIGGER `update_nbplaces` AFTER INSERT ON `INSCRIPTION`
 FOR EACH ROW
 UPDATE COVOITURAGE
 SET NB_PLACES_DISPO = NB_PLACES_DISPO - 1 
-WHERE COVOITURAGE.NUMCOVOIT = NEW.TRAJET
+WHERE COVOITURAGE.NUMCOVOIT = NEW.TRAJET;
+|
+
+DELIMITER ;
 
 
 /*
@@ -42,11 +48,11 @@ WHERE COVOITURAGE.NUMCOVOIT = NEW.TRAJET
 /*
 Procedure qui calcule la moyenne des prix d'un trajet entre deux villes données en entrée
 */
+
 CREATE PROCEDURE `avg_prix` (vd VARCHAR(30),va VARCHAR(30),OUT moy_prix DOUBLE)
 SELECT avg(COVOITURAGE.PRIX) INTO moy_prix
 FROM TRAJET_TYPE,COVOITURAGE
 WHERE VILLE_DEPART = vd AND VILLE_ARRIVEE = va AND VILLE_DEPART = V_DEPART AND VILLE_ARRIVEE = V_ARRIVEE;
-
 
 /*
 Procedure qui calcule la moyenne des avis d'un membre donné en entrée
