@@ -52,6 +52,7 @@ print( ------------------------------------------;")
 
 INSERT INTO COVOITURAGE VALUES(1,'MARSEILLE','LYON',10,4,1,NULL,15,19,'RDV','DEPOSE',5,5);
 INSERT INTO COVOITURAGE VALUES(2,'PARIS','BORDEAUX',15,8,1,NULL,10,18,'RDV','DEPOSE',5,5);
+INSERT INTO COVOITURAGE VALUES(3,'PARIS','BORDEAUX',15,8,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*
 print( ------------------------------------------;")
