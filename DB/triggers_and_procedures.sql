@@ -27,7 +27,7 @@ DELIMITER ;
 
 
 /*
-Trigger qui décrémente le nombre de places d'un covoiturage a chaque inscription à celui ci
+	Trigger qui décrémente le nombre de places d'un covoiturage a chaque inscription à celui ci
 */
 
 DELIMITER |
